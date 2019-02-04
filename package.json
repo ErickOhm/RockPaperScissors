@@ -1,0 +1,25 @@
+{
+  "name": "rockpaperscissors-master",
+  "version": "1.0.0",
+  "description": "Rock Paper Scissors",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmack/RockPaperScissors.git"
+  },
+  "author": "Erick Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickmack/RockPaperScissors/issues"
+  },
+  "homepage": "https://github.com/erickmack/RockPaperScissors#readme",
+  "dependencies": {
+    "autoprefixer": "^9.4.7"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.8"
+  }
+}
