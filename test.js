@@ -12,7 +12,7 @@ const paper_div = document.getElementById('p');
 const scissor_div = document.getElementById('s');
 const language = document.querySelector('#language');
 
-if(language.value === 'esp'){
+if (language.value === 'esp') {
     const nombres = document.querySelector('.badge__user');
     const pc = document.querySelector('.badge__comp');
     nombres.innerHTML = 'Tú';
@@ -26,12 +26,12 @@ function convertWord(letter) {
         if (letter === 'r') return "Rock";
         if (letter === 'p') return "Paper";
         return "Scissors"
-    } else if (language.value === 'esp'){
+    } else if (language.value === 'esp') {
         if (letter === 'r') return 'Piedra';
         if (letter === 'p') return 'Papel';
         return 'Tijeras'
     }
-    
+
 };
 
 function win(user, computer) {
@@ -40,8 +40,8 @@ function win(user, computer) {
     userDraw = false;
     userScore_span.innerHTML = userScore;
     computerScore_span.innerHTML = computerScore;
-    if (language.value === 'eng') { result_p.innerHTML = `${convertWord(user)} beats ${convertWord(computer)} You Win!`;}
-    else if (language.value === 'esp') { result_p.innerHTML = `${convertWord(user)} le gana a ${convertWord(computer)} tu ganas!`;}
+    if (language.value === 'eng') { result_p.innerHTML = `${convertWord(user)} beats ${convertWord(computer)} You Win!`; }
+    else if (language.value === 'esp') { result_p.innerHTML = `${convertWord(user)} le gana a ${convertWord(computer)} tu ganas!`; }
     const roundStatus = document.getElementById(user);
     roundStatus.classList.add('winningStyles');
     setTimeout(() => roundStatus.classList.remove('winningStyles'), 300);
@@ -96,7 +96,7 @@ function game(choice, computerChoice) {
     }
 }
 
-function test(choice){
+function test(choice) {
     if (userScore === 0 && computerScore === 0) {
         let computerChoice = 'r'
         userChoosed = choice;
@@ -104,19 +104,18 @@ function test(choice){
     } else {
         if (userDraw === true) {
             let computerChoice = playOnDraw();
-            computerChoosed = computerChoice;
             userChoosed = choice;
             game(choice, computerChoice);
-        } else if (userWon === false){
-            if(userChoosed === 'r'){
+        } else if (userWon === false) {
+            if (userChoosed === 'r') {
                 let computerChoice = 'r';
                 userChoosed = choice;
                 game(choice, computerChoice);
-            } else if (userChoosed === 'p'){
+            } else if (userChoosed === 'p') {
                 let computerChoice = 'p';
                 userChoosed = choice;
                 game(choice, computerChoice);
-            } else if (userChoosed === 's'){
+            } else if (userChoosed === 's') {
                 let computerChoice = 's';
                 userChoosed = choice;
                 game(choice, computerChoice);
@@ -133,7 +132,7 @@ function test(choice){
             } else if (userChoosed === 's') {
                 let computerChoice = 'r';
                 userChoosed = choice;
-                game(choice, computerChoosed);
+                game(choice, computerChoice);
             }
         }
     }
