@@ -3,6 +3,7 @@ let computerScore = 0;
 let userChoosed;
 let userWon = false;
 let userDraw = false;
+let inARow = 0;
 const userScore_span = document.getElementById('user-score');
 const computerScore_span = document.getElementById('computer-score');
 const scoreBoard_div = document.querySelector('.scoreboard');
@@ -36,6 +37,7 @@ function convertWord(letter) {
 
 function win(user, computer) {
     userScore++;
+    inARow++;
     userWon = true;
     userDraw = false;
     userScore_span.innerHTML = userScore;
@@ -49,6 +51,7 @@ function win(user, computer) {
 
 function lose(user, computer) {
     computerScore++;
+    inARow = 0;
     userWon = false;
     userDraw = false;
     userScore_span.innerHTML = userScore;
@@ -66,6 +69,7 @@ function draw(user, computer) {
     const roundStatus = document.getElementById(user);
     roundStatus.classList.add('drawStyles');
     userWon = false;
+    inARow = 0;
     userDraw = true;
     setTimeout(() => roundStatus.classList.remove('drawStyles'), 300);
 };
@@ -97,7 +101,11 @@ function game(choice, computerChoice) {
 }
 
 function test(choice) {
-    if (userScore === 0 && computerScore === 0) {
+    if (inARow > 3) {
+        let computerChoice = playOnDraw();
+        userChoosed = choice;
+        game(choice, computerChoice)
+    } else if (userScore === 0 && computerScore === 0) {
         let computerChoice = 'r'
         userChoosed = choice;
         game(choice, computerChoice);
