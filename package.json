@@ -20,6 +20,6 @@
     "autoprefixer": "^9.4.7"
   },
   "devDependencies": {
-    "cssnano": "^4.1.8"
+    "cssnano": "^4.1.10"
   }
 }
